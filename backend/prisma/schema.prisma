@@ -1,3 +1,9 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -7,53 +13,53 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model users {
-  id       Int    @id @default(autoincrement())
-  fullname String @db.VarChar(32)
-  email    String @db.VarChar(32)
-  password String @db.VarChar(64)
-
-  pets     pets[]
+model categorias {
+  id       Int        @id @default(autoincrement())
+  nombre   String     @db.VarChar(80)
+  mascotas mascotas[]
 }
 
-model pets {
-  id          Int        @id @default(autoincrement())
-  name        String     @db.VarChar(32)
-  status      PetStatus
-  photo       String     @db.VarChar(64)
-  race_id     Int
-  category_id Int
-  gender_id   Int
-  user_id     Int        // Clave foránea
-
-  race       races      @relation(fields: [race_id], references: [id])
-  category   categories @relation(fields: [category_id], references: [id])
-  gender     genders    @relation(fields: [gender_id], references: [id])
-  user       users      @relation(fields: [user_id], references: [id]) // Relación inversa
+model generos {
+  id       Int        @id @default(autoincrement())
+  nombre   String     @db.VarChar(80)
+  mascotas mascotas[]
+}
+model mascotas {
+  id           Int        @id @default(autoincrement())
+  foto         String     @db.VarChar(255)
+  nombre       String     @db.VarChar(80)
+  estado       estado
+  raza_id      Int
+  categoria_id Int
+  genero_id    Int
+  categorias   categorias @relation(fields: [categoria_id], references: [id], onUpdate: Restrict, map: "mas_ca")
+  generos      generos    @relation(fields: [genero_id], references: [id], onUpdate: Restrict, map: "mas_ge")
+  razas        razas      @relation(fields: [raza_id], references: [id], onUpdate: Restrict, map: "mas_ra")
+  usuarios     usuarios[]
+  @@index([categoria_id], map: "mas_ca")
+  @@index([genero_id], map: "mas_ge")
+  @@index([raza_id], map: "mas_ra")
 }
 
-model races {
-  id   Int    @id @default(autoincrement())
-  name String @db.VarChar(32)
-
-  pets pets[]
+model razas {
+  id       Int        @id @default(autoincrement())
+  name     String     @db.VarChar(50)
+  mascotas mascotas[]
 }
 
-model categories {
-  id   Int    @id @default(autoincrement())
-  name String @db.VarChar(32)
+model usuarios {
+  id         Int      @id @default(autoincrement())
+  nombre     String   @db.VarChar(50)
+  email      String   @unique @db.VarChar(80) 
+  password String @db.VarChar(100)
+  mascota_id Int
+  mascotas   mascotas @relation(fields: [mascota_id], references: [id], onUpdate: Restrict, map: "usuario_mascota")
 
-  pets pets[]
+  @@index([mascota_id], map: "usuario_mascota")
 }
 
-model genders {
-  id   Int    @id @default(autoincrement())
-  name String @db.VarChar(32)
 
-  pets pets[]
-}
-
-enum PetStatus {
-  ADOPTADO
-  POR_ADOPTAR
+enum estado{
+  Adoptado
+  Disponible
 }

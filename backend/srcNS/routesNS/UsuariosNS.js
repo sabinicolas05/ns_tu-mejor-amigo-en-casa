@@ -4,7 +4,7 @@ import { crearUsuarioNS, listarUsuariosNS, obtenerUsuarioPorIdNS, actualizarUsua
 
 const routerUsuarioNS = express.Router();
 
-routerUsuarioNS.post("/usuario",verificarToken, crearUsuarioNS);
+routerUsuarioNS.post("/usuario", crearUsuarioNS);
 routerUsuarioNS.get("/usuario", verificarToken, listarUsuariosNS);
 routerUsuarioNS.get("/usuario/:id", verificarToken, obtenerUsuarioPorIdNS);
 routerUsuarioNS.put("/usuario/:id", verificarToken, actualizarUsuarioNS);
