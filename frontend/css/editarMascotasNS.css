@@ -1,0 +1,140 @@
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Marco estilo celular */
+.phone-frame {
+  width: 380px;
+  height: 800px;
+  background-color: #0b3778;
+  border-radius: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 20px;
+}
+
+.phone-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Encabezado */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.header h1 {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  flex: 1;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Foto circular */
+.photo-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 20px 0;
+}
+
+.photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+}
+
+/* Formulario */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 10px;
+}
+
+.input {
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  background-color: #aec1db;
+  color: #000;
+  font-size: 14px;
+}
+
+.input::placeholder {
+  color: #3a4a7c;
+}
+
+select.input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg fill='%233a4a7c' height='20' width='20' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+/* Campo de foto */
+.upload-field {
+  position: relative;
+  background-color: #aec1db;
+  border-radius: 20px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #3a4a69;
+  font-size: 14px;
+}
+
+.upload-field img {
+  width: 20px;
+  height: 20px;
+}
+
+.upload-field input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Botón */
+.btn-guardar {
+  margin-top: 10px;
+  padding: 14px;
+  background-color: #38c38c;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-guardar:hover {
+  background-color: #2ea276;
+}

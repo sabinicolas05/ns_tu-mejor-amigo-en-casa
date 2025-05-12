@@ -1,0 +1,131 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: white;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Marco tipo celular */
+.phone-frame {
+  width: 380px;
+  height: 800px;
+  background-color: #0b3778;
+  border-radius: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  overflow: hidden;
+}
+
+.phone-screen {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Encabezado */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  flex: 1;
+}
+
+.header .back img,
+.header .close img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Cámara circular */
+.camera-container {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 10px auto 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.camera-container img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Formulario */
+form#petForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form#petForm input[type="text"],
+form#petForm select {
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  background-color: #aec1db;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Campo personalizado de foto */
+.upload-field {
+  position: relative;
+  background-color: #aec1db;
+  border-radius: 20px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #3b4a69;
+  font-size: 14px;
+}
+
+.upload-field img {
+  width: 20px;
+  height: 20px;
+}
+
+.upload-field input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Botón */
+form#petForm button[type="submit"] {
+  margin-top: 10px;
+  padding: 14px;
+  background-color: #38c38c;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form#petForm button[type="submit"]:hover {
+  background-color: #2ea276;
+}

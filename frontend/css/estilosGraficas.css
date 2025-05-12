@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #1e2a38;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.chart-container {
+  background: #2e3b4e;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  margin-top: 10px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #45a049;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modificar Mascota</title>
+  <link rel="stylesheet" href="css/editarMascotasNS.css" />
+</head>
+<body>
+  <div class="phone-frame">
+    <div class="phone-screen">
+      <div class="header">
+        <a href="listarMascotasNS.html"><img src="img/btn-back.svg" class="icon" alt="Volver" /></a>
+        <h1>Modificar Mascota</h1>
+        <a href="indexNS.html"><img src="img/btn-close.svg" class="icon" alt="Cerrar" /></a>
+      </div>
+
+      <div class="photo-container">
+        <img id="petPhoto" src="img/default-pet.png" class="photo" alt="Foto mascota" />
+      </div>
+
+      <form id="petForm" class="formulario" enctype="multipart/form-data">
+        <input type="hidden" id="petId" />
+
+        <input type="text" id="name" class="input" placeholder="Nombre" required />
+
+        <select id="race" class="input" required>
+          <option value="">Seleccione Raza...</option>
+        </select>
+
+        <select id="category" class="input" required>
+          <option value="">Seleccione Categoría...</option>
+        </select>
+
+        <select id="gender" class="input" required>
+          <option value="">Seleccione Género...</option>
+        </select>
+
+        <select id="usuario" class="input" required>
+          <option value="">Seleccione Usuario...</option>
+        </select>
+
+        <select id="estado" class="input" required>
+          <option value="">Seleccione Estado...</option>
+          <option value="Disponible">Disponible</option>
+          <option value="Adoptado">Adoptado</option>
+        </select>
+
+        <div class="upload-field">
+          <label for="photo">Cambiar Foto</label>
+          <img src="img/icon-camera.svg" alt="Foto">
+          <input type="file" id="photo">
+        </div>
+
+        <button type="submit" class="btn-guardar">Modificar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/editarMascotaNS.js"></script>
+</body>
+</html>

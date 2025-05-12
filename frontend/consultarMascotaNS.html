@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Consultar Mascota</title>
+  <link rel="stylesheet" href="css/consultarMascotasNS.css">
+</head>
+<body>
+  <div class="phone-frame">
+    <div class="phone-screen">
+      <div class="header">
+        <a href="listarMascotasNS.html"><img src="img/btn-back.svg" class="icon" alt="Volver" /></a>
+        <h2>Consultar Mascota</h2>
+        <a href="indexNS.html"><img src="img/btn-close.svg" class="icon" alt="Cerrar" /></a>
+      </div>
+
+      <div class="image-container">
+        <img id="petPhoto" src="img/default-pet.png" alt="Foto mascota" />
+      </div>
+
+      <div class="readonly-field">
+        <span class="label">Nombre:</span>
+        <span id="name" class="value"></span>
+      </div>
+
+      <div class="readonly-field">
+        <span class="label">Raza:</span>
+        <span id="race" class="value"></span>
+      </div>
+
+      <div class="readonly-field">
+        <span class="label">Categoría:</span>
+        <span id="category" class="value"></span>
+      </div>
+
+      <div class="readonly-field">
+        <span class="label">Género:</span>
+        <span id="gender" class="value"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/consultarMascotaNS.js"></script>
+</body>
+</html>

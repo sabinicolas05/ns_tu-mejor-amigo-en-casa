@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reportes de Mascotas</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <link rel="stylesheet" href="css/reportes.css" />
+</head>
+<body>
+  <h1>Reportes de Mascotas</h1>
+
+  <div>
+    <canvas id="graficaCategorias" width="400" height="200"></canvas>
+    <canvas id="graficaEstados" width="400" height="200"></canvas>
+  </div>
+
+  <button onclick="generarReporteDatos()">📄 Descargar Reporte Datos</button>
+  <button onclick="generarReporteGraficas()">📊 Descargar Reporte Gráficas</button>
+
+  <script src="js/reportesMascotas.js"></script>
+</body>
+</html>

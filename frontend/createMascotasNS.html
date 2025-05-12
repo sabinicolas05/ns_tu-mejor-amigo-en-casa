@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Adicionar Mascota</title>
+  <link rel="stylesheet" href="css/createMacotasNS.css">
+</head>
+<body>
+  <div class="phone-frame">
+    <div class="phone-screen">
+      <div class="header">
+        <a href="listarMascotasNS.html" class="back"><img src="img/btn-back.svg" alt="Regresar"></a>
+        <h1>Adicionar Mascota</h1>
+        <a href="indexNS.html" class="close"><img src="img/btn-close.svg" alt="Cerrar"></a>
+      </div>
+
+      <form id="petForm">
+        <div class="camera-container">
+          <img src="img/photo-lg-0.svg" alt="Cámara">
+        </div>
+
+        <input type="text" id="name" placeholder="Nombre" required>
+
+        <select id="race" required>
+          <option value="">Seleccione Raza...</option>
+        </select>
+
+        <select id="category" required>
+          <option value="">Seleccione Categoría...</option>
+        </select>
+
+        <select id="usuario" required>
+          <option value="">Seleccione el Usuario...</option>
+        </select>
+
+        <div class="upload-field">
+          <label for="photo">Subir Foto</label>
+          <img src="img/icon-camera.svg" alt="Foto">
+          <input type="file" id="photo" required>
+        </div>
+
+        <select id="gender" required>
+          <option value="">Seleccione Género...</option>
+        </select>
+
+        <select id="estado" required>
+          <option value="">Seleccione Estado...</option>
+          <option value="Disponible">Disponible</option>
+          <option value="Adoptado">Adoptado</option>
+        </select>
+
+        <button type="submit">Guardar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/createMascotasNS.js"></script>
+</body>
+</html>
